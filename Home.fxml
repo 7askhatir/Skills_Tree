@@ -59,43 +59,6 @@
       </VBox>
       <AnchorPane layoutX="291.0" prefHeight="554.0" prefWidth="684.0">
          <children>
-            <Pane fx:id="page2" prefHeight="564.0" prefWidth="778.0" style="-fx-background-color: #ffffff;">
-               <children>
-                  <Label layoutX="38.0" layoutY="26.0" prefHeight="30.0" prefWidth="446.0" style="-fx-font-family: sans-serif;" text="Développeur⋅se web et web mobile">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                  </Label>
-                  <VBox fx:id="vbox" layoutX="8.0" layoutY="73.0" prefHeight="491.0" prefWidth="334.0">
-                     <children>
-                        <Pane fx:id="pane_comp" prefHeight="75.0" prefWidth="334.0">
-                           <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="6.0" prefHeight="38.0" prefWidth="334.0" text="C1. Maquetter une application" />
-                              <AnchorPane layoutX="9.0" layoutY="45.0" prefHeight="30.0" prefWidth="323.0" style="-fx-background-color: rgb(13, 122, 35); -fx-background-radius: 13px;">
-                                 <children>
-                                    <Button layoutX="110.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="103.0" style="-fx-background-color: rgb(13, 122, 35);" text="niveau 2, adapter" textFill="WHITE">
-                                       <font>
-                                          <Font size="8.0" />
-                                       </font>
-                                    </Button>
-                                    <Button layoutX="214.0" layoutY="1.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="97.0" style="-fx-background-color: rgb(13, 122, 35);" text="niveau 3, transposer" textFill="WHITE">
-                                       <font>
-                                          <Font size="8.0" />
-                                       </font>
-                                    </Button>
-                                    <Button layoutX="10.0" layoutY="1.0" minHeight="15.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="101.0" style="-fx-background-color: rgb(13, 122, 35);" text="niveau 1, imiter" textFill="WHITE">
-                                       <font>
-                                          <Font size="8.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </Pane>
-                     </children>
-                  </VBox>
-               </children>
-            </Pane>
             <Pane fx:id="page1" prefHeight="564.0" prefWidth="777.0" style="-fx-background-color: #ffffff;">
                <children>
                   <Pane layoutX="245.0" layoutY="27.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-radius: 50%;">
@@ -128,6 +91,17 @@
                      </font>
                   </Label>
                   <Pane prefHeight="564.0" prefWidth="778.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="page22" prefHeight="564.0" prefWidth="778.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Label layoutX="38.0" layoutY="26.0" prefHeight="30.0" prefWidth="446.0" style="-fx-font-family: sans-serif;" text="Développeur⋅se web et web mobile">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <VBox fx:id="vbox" layoutX="8.0" layoutY="109.0" prefHeight="432.0" prefWidth="375.0" />
+                  <VBox fx:id="vbox1" layoutX="401.0" layoutY="109.0" prefHeight="432.0" prefWidth="375.0" />
                </children>
             </Pane>
             <Pane fx:id="home1" layoutX="-292.0" prefHeight="564.0" prefWidth="1069.0" style="-fx-background-color: #ffffff;">

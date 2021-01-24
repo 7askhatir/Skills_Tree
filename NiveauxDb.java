@@ -10,6 +10,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -34,25 +37,23 @@ public class NiveauxDb {
     
     
 } 
-    public static Users getUser(String em){
-        Users u= new Users();
+    public static List<Niveaux> getNv(String em){
+        List<Niveaux> list= new ArrayList<Niveaux>();
+        
         try{
-            String sql ="SELECT * FROM `users` where `email`=? ";
+            String sql ="SELECT * FROM `niveaux` where `id_user`=?";
             Connection con =AdminsDb.getCon();
             PreparedStatement preparedstatement =(PreparedStatement) con.prepareStatement(sql);
             preparedstatement.setString(1, em);
             ResultSet result= preparedstatement.executeQuery();
             
             while(result.next()){
+                Niveaux u= new Niveaux();
+                u.setId_competence(result.getInt(2));
+                u.setId_user(result.getInt(1));
+                u.setNiveau(result.getInt(3));
                 
-                u.setId(result.getInt(1));
-                u.setEmail(result.getString(4));
-                u.setNom(result.getString(2));
-                u.setPrenom(result.getString(3));
-                u.setPass(result.getString(5));
-                u.setRole(result.getString(6));
-                u.setReference(result.getString(7));
-                
+                list.add(u);
                 
                 
             }
@@ -62,7 +63,24 @@ public class NiveauxDb {
         catch(SQLException e){
             
         }
-        return u;
+        return list;
         
     } 
+public static void  updateNV(int c,int u,int niveau){
+    
+      try{
+         Connection con =AdminsDb.getCon();
+         String query ="UPDATE `skills`.`niveaux` SET `niveau` = ? WHERE `niveaux`.`id_user` = ? AND `niveaux`.`id_competence` = ?;"; 
+         PreparedStatement preparedStmt = (PreparedStatement) con.prepareStatement(query);
+         preparedStmt.setInt(1,niveau);
+         preparedStmt.setInt(2, u);
+         preparedStmt.setInt(3, c);
+         preparedStmt.executeUpdate();
+         System.out.print(preparedStmt);
+        
+         con.close();
+     }catch(Exception e){
+         System.err.print( e.getClass().getName() + ": " + e.getMessage());
+     }
+}
 }
